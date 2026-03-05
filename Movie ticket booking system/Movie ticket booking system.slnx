@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Movie ticket booking system/Movie ticket booking system.vcxproj" />
+</Solution>
