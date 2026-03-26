@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d9f2b7ec-5069-4a10-930d-1e39688d3cd0}</ProjectGuid>
+    <ProjectGuid>{1E2880BA-B28D-38C7-838B-A75F94F3541E}</ProjectGuid>
     <RootNamespace>Movieticketbookingsystem</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administrator.cpp" />
     <ClCompile Include="Movie ticket booking system.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Administrator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,44 +1,11 @@
+// Movie ticket booking system\Movie ticket booking system.cpp
 #include <iostream>
-#include <fstream>
-#include <string>
+#include "Administrator.h"
 
-using namespace std;
-
-void printDesign(string fileName) {
-    ifstream file(fileName);
-    if (file.is_open()) {
-        cout << file.rdbuf(); 
-        file.close();
-    }
-    else {
-
-        cout << "--- MOVIE TICKET BOOKING SYSTEM ---" << endl;
-        cout << "[Error: " << fileName << " not found]" << endl;
-    }
-}
-
-int main() {
-    int choice;
-
-    while (true) {
-        system("cls");
-
-        printDesign("landpage.txt");
-
-        cout << "\n\n   Enter choice: ";
-        cin >> choice;
-
-        switch (choice) {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            return 0;
-        default:
-            cout << "Invalid selection!";
-            system("pause");
-        }
-    }
+int main()
+{
+    // Minimal entry point to exercise Administrator::changePass
+    Administrator admin;
+    admin.changePass();
     return 0;
 }
