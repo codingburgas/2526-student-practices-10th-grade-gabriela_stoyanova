@@ -12,6 +12,7 @@ public:
     bool registerAdmin(const std::string& id, const std::string& pass);
     bool loginAdmin(const std::string& id, const std::string& pass);
     bool verifyCredentials(const std::string& id, const std::string& pass);
+    void adminArea(const std::string& id);
 private:
     std::string adminId;
     std::string adminPass;

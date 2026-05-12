@@ -4,9 +4,12 @@
 #include <limits>
 #include "Administrator.h"
 #include "User.h"
+#include "Config.h"
 
 int main()
 {
+    Config::ensureDataDirectory();
+
     Administrator admin;
     int choice = 0;
 
@@ -104,11 +107,11 @@ int main()
                     std::cin >> pass;
                     if (admin.loginAdmin(id, pass))
                     {
-                        std::cout << "Login successful. You can change admin credentials now.\n";
+                        std::cout << "Login successful. Entering admin area...\n";
                         std::cout << "Press any key to continue...\n";
                         _getch();
                         system("cls");
-                        admin.changePass(id);
+                        admin.adminArea(id);
                     }
                     else
                     {
