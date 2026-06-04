@@ -41,9 +41,9 @@ std::vector<int> getBookedSeats(const std::string& movieTitle, const std::string
         std::stringstream ss(line);
         std::string userId, title, time;
         int seat;
-        if (ss >> userId && ss.ignore(1) && std::getline(ss, title, '|') && ss >> time && ss >> seat)
+        if (std::getline(ss, userId, '|') && std::getline(ss, title, '|') && std::getline(ss, time, '|'))
         {
-            if (title == movieTitle && time == showTime)
+            if (ss >> seat && title == movieTitle && time == showTime)
                 booked.push_back(seat);
         }
     }
@@ -78,9 +78,9 @@ std::vector<BookingInfo> getUserBookings(const std::string& userId)
         std::stringstream ss(line);
         std::string user, title, time;
         int seat;
-        if (ss >> user && ss.ignore(1) && std::getline(ss, title, '|') && ss >> time && ss >> seat)
+        if (std::getline(ss, user, '|') && std::getline(ss, title, '|') && std::getline(ss, time, '|'))
         {
-            if (user == userId)
+            if (ss >> seat && user == userId)
                 bookings.push_back({user, title, time, seat});
         }
     }
@@ -101,9 +101,9 @@ bool cancelBooking(const std::string& userId, const std::string& movieTitle, con
         std::string user, title, time;
         int s;
         bool match = false;
-        if (ss >> user && ss.ignore(1) && std::getline(ss, title, '|') && ss >> time && ss >> s)
+        if (std::getline(ss, user, '|') && std::getline(ss, title, '|') && std::getline(ss, time, '|'))
         {
-            if (user == userId && title == movieTitle && time == showTime && s == seat)
+            if (ss >> s && user == userId && title == movieTitle && time == showTime && s == seat)
             {
                 found = true;
                 match = true;
