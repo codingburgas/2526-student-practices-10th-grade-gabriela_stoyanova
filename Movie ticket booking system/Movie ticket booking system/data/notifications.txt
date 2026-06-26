@@ -1,0 +1,6 @@
+5000 123 2 0
+Your booking #0 has been cancelled.|2026-06-25 22:03:20
+5000 123 1 0
+Your booking #0 has been confirmed.|2026-06-26 06:59:24
+5001 123 2 0
+Your booking #0 has been cancelled.|2026-06-26 06:59:49

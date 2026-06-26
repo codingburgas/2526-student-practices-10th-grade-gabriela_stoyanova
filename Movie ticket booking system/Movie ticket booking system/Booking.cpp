@@ -66,7 +66,7 @@ bool bookTicket(const std::string& userId, const std::string& movieTitle, const 
     return true;
 }
 
-std::vector<BookingInfo> getUserBookings(const std::string& userId)
+std::vector<BookingInfo> getUserBookingsLegacy(const std::string& userId)
 {
     std::vector<BookingInfo> bookings;
     std::ifstream in(Config::BOOKINGS_FILE);

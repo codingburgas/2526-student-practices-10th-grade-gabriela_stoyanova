@@ -16,8 +16,8 @@ int main()
     do
     {
         std::cout << "=== Movie Ticket Booking - Main Menu ===\n";
-        std::cout << "1. User login\n";
-        std::cout << "2. Admin login\n";
+        std::cout << "1. User Menu\n";
+        std::cout << "2. Admin Menu\n";
         std::cout << "3. Exit\n";
         std::cout << "Enter choice: ";
 
@@ -33,32 +33,36 @@ int main()
         case 1:
         {
             system("cls");
-            // User path: login or register
+            // User Menu: Login or Register
+            int userChoice = 0;
+            do
             {
-                User user;
-                if (!user.hasAnyUsers())
+                std::cout << "=== User Menu ===\n";
+                std::cout << "1. Login\n";
+                std::cout << "2. Register\n";
+                std::cout << "3. Back to Main Menu\n";
+                std::cout << "Enter choice: ";
+
+                if (!(std::cin >> userChoice))
                 {
-                    std::string id, pass;
-                    std::cout << "No users found. Register a new user.\n";
-                    std::cout << "User ID: ";
-                    std::cin >> id;
-                    std::cout << "Password: ";
-                    std::cin >> pass;
-                    if (user.registerUser(id, pass))
-                        std::cout << "Registration successful. You can now login.\n";
-                    else
-                        std::cout << "Registration failed.\n";
-                    std::cout << "Press any key to continue...\n";
-                    _getch();
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    userChoice = -1;
                 }
-                else
+
+                switch (userChoice)
                 {
+                case 1:
+                {
+                    system("cls");
+                    User user;
                     std::string id, pass;
-                    std::cout << "User login\n";
+                    std::cout << "=== User Login ===\n";
                     std::cout << "User ID: ";
                     std::cin >> id;
                     std::cout << "Password: ";
                     std::cin >> pass;
+
                     if (user.loginUser(id, pass))
                     {
                         std::cout << "Login successful. Entering user area...\n";
@@ -73,38 +77,79 @@ int main()
                         std::cout << "Press any key to continue...\n";
                         _getch();
                     }
+                    system("cls");
+                    break;
                 }
-            }
+                case 2:
+                {
+                    system("cls");
+                    User user;
+                    std::string id, pass;
+                    std::cout << "=== User Registration ===\n";
+                    std::cout << "User ID: ";
+                    std::cin >> id;
+                    std::cout << "Password: ";
+                    std::cin >> pass;
+
+                    if (user.registerUser(id, pass))
+                    {
+                        std::cout << "Registration successful. You can now login.\n";
+                    }
+                    else
+                    {
+                        std::cout << "Registration failed.\n";
+                    }
+                    std::cout << "Press any key to continue...\n";
+                    _getch();
+                    system("cls");
+                    break;
+                }
+                case 3:
+                {
+                    system("cls");
+                    break;
+                }
+                default:
+                    std::cout << "Invalid selection. Press any key to try again...\n";
+                    _getch();
+                    system("cls");
+                    break;
+                }
+            } while (userChoice != 3);
             break;
         }
         case 2:
         {
             system("cls");
-            // Admin path: register or login
+            // Admin Menu: Login or Register
+            int adminChoice = 0;
+            do
             {
-                if (!admin.hasAnyAdmins())
+                std::cout << "=== Admin Menu ===\n";
+                std::cout << "1. Login\n";
+                std::cout << "2. Register\n";
+                std::cout << "3. Back to Main Menu\n";
+                std::cout << "Enter choice: ";
+
+                if (!(std::cin >> adminChoice))
                 {
-                    std::string id, pass;
-                    std::cout << "No admins found. Register a new admin.\n";
-                    std::cout << "Admin ID: ";
-                    std::cin >> id;
-                    std::cout << "Password: ";
-                    std::cin >> pass;
-                    if (admin.registerAdmin(id, pass))
-                        std::cout << "Admin registration successful.\n";
-                    else
-                        std::cout << "Admin registration failed.\n";
-                    std::cout << "Press any key to continue...\n";
-                    _getch();
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    adminChoice = -1;
                 }
-                else
+
+                switch (adminChoice)
                 {
+                case 1:
+                {
+                    system("cls");
                     std::string id, pass;
-                    std::cout << "Admin login\n";
+                    std::cout << "=== Admin Login ===\n";
                     std::cout << "Admin ID: ";
                     std::cin >> id;
                     std::cout << "Password: ";
                     std::cin >> pass;
+
                     if (admin.loginAdmin(id, pass))
                     {
                         std::cout << "Login successful. Entering admin area...\n";
@@ -119,9 +164,44 @@ int main()
                         std::cout << "Press any key to continue...\n";
                         _getch();
                     }
+                    system("cls");
+                    break;
                 }
-            }
+                case 2:
+                {
+                    system("cls");
+                    std::string id, pass;
+                    std::cout << "=== Admin Registration ===\n";
+                    std::cout << "Admin ID: ";
+                    std::cin >> id;
+                    std::cout << "Password: ";
+                    std::cin >> pass;
 
+                    if (admin.registerAdmin(id, pass))
+                    {
+                        std::cout << "Admin registration successful. You can now login.\n";
+                    }
+                    else
+                    {
+                        std::cout << "Admin registration failed.\n";
+                    }
+                    std::cout << "Press any key to continue...\n";
+                    _getch();
+                    system("cls");
+                    break;
+                }
+                case 3:
+                {
+                    system("cls");
+                    break;
+                }
+                default:
+                    std::cout << "Invalid selection. Press any key to try again...\n";
+                    _getch();
+                    system("cls");
+                    break;
+                }
+            } while (adminChoice != 3);
             break;
         }
         case 3:

@@ -129,17 +129,37 @@
   <ItemGroup>
     <ClCompile Include="Administrator.cpp" />
     <ClCompile Include="Booking.cpp" />
+    <ClCompile Include="BookingEnhanced.cpp" />
+    <ClCompile Include="Cinema.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Movie ticket booking system.cpp" />
     <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="MovieEnhanced.cpp" />
+    <ClCompile Include="Notification.cpp" />
+    <ClCompile Include="Seat.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Administrator.h" />
     <ClInclude Include="Booking.h" />
+    <ClInclude Include="BookingEnhanced.h" />
+    <ClInclude Include="Cinema.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Movie.h" />
+    <ClInclude Include="MovieEnhanced.h" />
+    <ClInclude Include="Notification.h" />
+    <ClInclude Include="Seat.h" />
     <ClInclude Include="User.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ARCHITECTURE.md" />
+    <None Include="COMPLETION_CHECKLIST.md" />
+    <None Include="FINAL_REPORT.md" />
+    <None Include="IMPLEMENTATION_GUIDE.md" />
+    <None Include="IMPLEMENTATION_SUMMARY.md" />
+    <None Include="INDEX.md" />
+    <None Include="QUICK_START.md" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
