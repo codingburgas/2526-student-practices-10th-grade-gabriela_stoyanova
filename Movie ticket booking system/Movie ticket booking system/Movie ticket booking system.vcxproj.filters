@@ -81,14 +81,4 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="IMPLEMENTATION_GUIDE.md" />
-    <None Include="IMPLEMENTATION_SUMMARY.md" />
-    <None Include="QUICK_START.md" />
-    <None Include="ARCHITECTURE.md" />
-    <None Include="FINAL_REPORT.md" />
-    <None Include="README.md" />
-    <None Include="INDEX.md" />
-    <None Include="COMPLETION_CHECKLIST.md" />
-  </ItemGroup>
 </Project>

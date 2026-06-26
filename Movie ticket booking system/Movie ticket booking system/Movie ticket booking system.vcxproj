@@ -151,16 +151,6 @@
     <ClInclude Include="Seat.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ARCHITECTURE.md" />
-    <None Include="COMPLETION_CHECKLIST.md" />
-    <None Include="FINAL_REPORT.md" />
-    <None Include="IMPLEMENTATION_GUIDE.md" />
-    <None Include="IMPLEMENTATION_SUMMARY.md" />
-    <None Include="INDEX.md" />
-    <None Include="QUICK_START.md" />
-    <None Include="README.md" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
